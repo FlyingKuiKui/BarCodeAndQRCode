@@ -21,10 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.lbl = [[UILabel alloc]initWithFrame:CGRectMake(10, 20, 300, 50)];
+    self.lbl = [[UILabel alloc]initWithFrame:CGRectMake(10, 70, 300, 50)];
     self.lbl.textColor = [UIColor darkTextColor];
     self.lbl.numberOfLines = 0;
-    self.lbl.backgroundColor = [UIColor whiteColor];
+    self.lbl.backgroundColor = [UIColor darkGrayColor];
     self.lbl.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:self.lbl];
     /*
@@ -33,7 +33,7 @@
 //        [self testGenerateCode];
     
     /*
-     识别图片中的二维码
+     识别图片中的二维码、条形码
      */
         [self decodeQRCode];
     
@@ -45,11 +45,12 @@
     /*
      测试手电筒的开关
      */
-    UIButton *torchBtn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 30, 30)];
+    UIButton *torchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 200, 50)];
     torchBtn.backgroundColor = [UIColor blueColor];
-    torchBtn.titleLabel.text = @"手电筒开关";
-    torchBtn.titleLabel.textColor = [UIColor whiteColor];
+    [torchBtn setTitle:@"手电筒开关" forState:UIControlStateNormal];
+    [torchBtn setTintColor:[UIColor whiteColor]];
     [torchBtn addTarget:self action:@selector(openOrCloseTorchlight) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:torchBtn];
     // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark - 从摄像头中获取二维码
@@ -151,6 +152,7 @@
 - (void)decodeQRCode{
     // 二维码
     NSString *outputString = [BarCodeAndQRCodeManager decodeQRCodeWithPhotoCodeImage:[UIImage imageNamed:@"CESHI.png"]];
+    
     NSLog(@"%@",outputString);
     
 }
