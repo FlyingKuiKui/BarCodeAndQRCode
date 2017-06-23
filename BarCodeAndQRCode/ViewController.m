@@ -26,21 +26,33 @@
     self.lbl.numberOfLines = 0;
     self.lbl.backgroundColor = [UIColor whiteColor];
     self.lbl.font = [UIFont systemFontOfSize:12];
-    //    [self.view addSubview:self.lbl];
-    //    [self.view addSubview:self.lbl];
-    // 生成二维码、条形码
-    //    [self testGenerateCode];
-    // 识别图片中的二维码、条形码
-    //    [self decodeQRCode];
-    //  从摄像头中获取二维码
-    //    [self getImageMessageFromCamera];
-    // 测试手电筒的开关
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 30, 30)];
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget:self action:@selector(openOrCloseTorchlight) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.lbl];
+    /*
+     生成二维码、条形码
+     */
+//        [self testGenerateCode];
+    
+    /*
+     识别图片中的二维码
+     */
+        [self decodeQRCode];
+    
+    /*
+     从摄像头中获取二维码
+     */
+//    [self getImageMessageFromCamera];
+
+    /*
+     测试手电筒的开关
+     */
+    UIButton *torchBtn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 30, 30)];
+    torchBtn.backgroundColor = [UIColor blueColor];
+    torchBtn.titleLabel.text = @"手电筒开关";
+    torchBtn.titleLabel.textColor = [UIColor whiteColor];
+    [torchBtn addTarget:self action:@selector(openOrCloseTorchlight) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
+#pragma mark - 从摄像头中获取二维码
 // 记得导入AVFoundation框架
 - (void)getImageMessageFromCamera{
     self.isQRCodeCaptured = NO;
@@ -104,7 +116,7 @@
         NSLog(@"%@", error);
     }
 }
-// AVCaptureMetadataOutputObjectsDelegate
+#pragma mark - AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
     // 成功后系统不会停止扫描，用isQRCodeCaptured变量来控制。
@@ -123,11 +135,11 @@
     }
 }
 
-
+#pragma mark - 生成二维码、条形码
 - (void)testGenerateCode{
     UIImageView *qrCode = [[UIImageView alloc]init];
     // 生成二维码
-    //    qrCode.image = [BarCodeAndQRCodeManager generateQRCodeWithInputMessage:@"本人手机号\n13636348526\n账号10000100001\n生成于2016-12-05\n我这只是个测试\n看看能打多少行\n" Width:200 Height:200];
+    //    qrCode.image = [BarCodeAndQRCodeManager generateQRCodeWithInputMessage:@"本人手机号\n13600000006\n账号10000100001\n生成于某年某月某日\n我这只是个测试\n看看能打多少行\n" Width:200 Height:200];
     //    qrCode.image = [BarCodeAndQRCodeManager generateQRCodeWithInputMessage:@"自动那天起，我就一直在这里等待着你，你究竟在干吗，我也不知道啊！也许，maybe，谁都会被骄傲不的开会吧安徽的安徽的差得很安徽的被查看不到爱好的不好撒比电话吧的好不哈不动产爱好的不插卡的爱好的不好卡尔此" Width:200 Height:200 AndCenterImage:[UIImage imageNamed:@"center.png"]];
     // 生成条形码
     qrCode.image = [BarCodeAndQRCodeManager generateBarcodeWithInputMessage:@"10128500623161204184453" Width:self.view.bounds.size.width-10 Height:100];
@@ -135,11 +147,10 @@
     qrCode.frame = CGRectMake(5, 100, qrCode.image.size.width, qrCode.image.size.height);
     [self.view addSubview:qrCode];
 }
+#pragma mark - 识别图片中的二维码
 - (void)decodeQRCode{
     // 二维码
-    //        NSString *outputString = [BarCodeAndQRCodeManager decodeQRCodeWithPhotoCodeImage:[UIImage imageNamed:@"CESHI.png"]];
-    // 条形码
-    NSString *outputString = [BarCodeAndQRCodeManager decodeBarcodeWithPhotoBarcodeImage:[UIImage imageNamed:@"CESHI2.png"]];
+    NSString *outputString = [BarCodeAndQRCodeManager decodeQRCodeWithPhotoCodeImage:[UIImage imageNamed:@"CESHI.png"]];
     NSLog(@"%@",outputString);
     
 }

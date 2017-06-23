@@ -17,6 +17,7 @@
 #import "BarCodeAndQRCodeManager.h"
 
 @implementation BarCodeAndQRCodeManager
+// QRCode
 + (UIImage *)generateQRCodeWithInputMessage:(NSString *)inputMessage
                                       Width:(CGFloat)width
                                      Height:(CGFloat)height{
@@ -72,17 +73,6 @@
     ciImage = [ciImage imageByApplyingTransform:CGAffineTransformScale(CGAffineTransformIdentity, scaleX, scaleY)];
     UIImage *returnImage = [UIImage imageWithCIImage:ciImage];
     return returnImage;
-}
-+ (NSString *)decodeBarcodeWithPhotoBarcodeImage:(UIImage *)barcodeImage{
-    NSString *outputString = nil;
-    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
-    CIImage *image = [[CIImage alloc] initWithImage:barcodeImage];
-    NSArray *features = [detector featuresInImage:image];
-    NSLog(@"%@",features);
-//    for (CIQRCodeFeature *feature in features) {
-//        outputString = feature.messageString;
-//    }
-    return outputString;
 }
 
 @end
