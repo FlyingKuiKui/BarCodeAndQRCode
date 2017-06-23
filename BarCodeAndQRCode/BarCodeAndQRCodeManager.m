@@ -74,5 +74,19 @@
     UIImage *returnImage = [UIImage imageWithCIImage:ciImage];
     return returnImage;
 }
+/*
+ 目前并不支持，还未写完
+ */
++ (NSString *)decodeBarcodeWithPhotoBarcodeImage:(UIImage *)barcodeImage{
+    NSString *outputString = nil;
+    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{CIDetectorAccuracy:CIDetectorTracking}];
+    CIImage *image = [[CIImage alloc] initWithImage:barcodeImage];
+    NSArray *features = [detector featuresInImage:image];
+    NSLog(@"%@",features);
+    for (CIQRCodeFeature *feature in features) {
+        outputString = feature.messageString;
+    }
+    return outputString;
+}
 
 @end

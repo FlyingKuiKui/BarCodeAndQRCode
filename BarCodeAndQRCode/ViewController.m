@@ -153,6 +153,7 @@
     // 二维码
     NSString *outputString = [BarCodeAndQRCodeManager decodeQRCodeWithPhotoCodeImage:[UIImage imageNamed:@"CESHI.png"]];
     
+//    NSString *outputString = [BarCodeAndQRCodeManager decodeBarcodeWithPhotoBarcodeImage:[UIImage imageNamed:@"CESHI2.png"]];
     NSLog(@"%@",outputString);
     
 }
