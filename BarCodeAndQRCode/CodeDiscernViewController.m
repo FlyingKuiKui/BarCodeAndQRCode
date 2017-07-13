@@ -100,7 +100,7 @@
                                                           metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:weakSelf.scanRect];
                                                           // 如果不设置，整个屏幕都可以扫
                                                       }];
-        // 设置扫描界面ss布局
+        // 设置扫描界面布局
         QRScanView *scanView = [[QRScanView alloc] initWithScanRect:self.scanRect];
         [self.view addSubview:scanView];
         [session startRunning];
