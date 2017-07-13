@@ -23,6 +23,9 @@
 + (UIImage *)generateBarcodeWithInputMessage:(NSString *)inputMessage
                                        Width:(CGFloat)width
                                       Height:(CGFloat)height;
+/*
+ 目前并不支持，还未写完
+ */
 + (NSString *)decodeBarcodeWithPhotoBarcodeImage:(UIImage *)barcodeImage;
 
 @end

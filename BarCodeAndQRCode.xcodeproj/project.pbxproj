@@ -18,8 +18,7 @@
 		7408ABA71EFC9AC600015DF7 /* BarCodeAndQRCodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7408ABA41EFC9AC600015DF7 /* BarCodeAndQRCodeManager.m */; };
 		7408ABA81EFC9AC600015DF7 /* QRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7408ABA61EFC9AC600015DF7 /* QRScanView.m */; };
 		7408ABAC1EFC9B9300015DF7 /* center.png in Resources */ = {isa = PBXBuildFile; fileRef = 7408ABA91EFC9B9300015DF7 /* center.png */; };
-		7408ABAD1EFC9B9300015DF7 /* CESHI.png in Resources */ = {isa = PBXBuildFile; fileRef = 7408ABAA1EFC9B9300015DF7 /* CESHI.png */; };
-		7408ABAE1EFC9B9300015DF7 /* CESHI2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7408ABAB1EFC9B9300015DF7 /* CESHI2.png */; };
+		748BA8A11F16198B0043E2CB /* CodeDiscernViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748BA8A01F16198B0043E2CB /* CodeDiscernViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +60,8 @@
 		7408ABA51EFC9AC600015DF7 /* QRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanView.h; sourceTree = "<group>"; };
 		7408ABA61EFC9AC600015DF7 /* QRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanView.m; sourceTree = "<group>"; };
 		7408ABA91EFC9B9300015DF7 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
-		7408ABAA1EFC9B9300015DF7 /* CESHI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CESHI.png; sourceTree = "<group>"; };
-		7408ABAB1EFC9B9300015DF7 /* CESHI2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CESHI2.png; sourceTree = "<group>"; };
+		748BA89F1F16198B0043E2CB /* CodeDiscernViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeDiscernViewController.h; sourceTree = "<group>"; };
+		748BA8A01F16198B0043E2CB /* CodeDiscernViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeDiscernViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +116,13 @@
 				7408AB741EFC9AA600015DF7 /* AppDelegate.m */,
 				7408AB761EFC9AA600015DF7 /* ViewController.h */,
 				7408AB771EFC9AA600015DF7 /* ViewController.m */,
+				748BA89F1F16198B0043E2CB /* CodeDiscernViewController.h */,
+				748BA8A01F16198B0043E2CB /* CodeDiscernViewController.m */,
 				7408ABA31EFC9AC600015DF7 /* BarCodeAndQRCodeManager.h */,
 				7408ABA41EFC9AC600015DF7 /* BarCodeAndQRCodeManager.m */,
 				7408ABA51EFC9AC600015DF7 /* QRScanView.h */,
 				7408ABA61EFC9AC600015DF7 /* QRScanView.m */,
 				7408ABA91EFC9B9300015DF7 /* center.png */,
-				7408ABAA1EFC9B9300015DF7 /* CESHI.png */,
-				7408ABAB1EFC9B9300015DF7 /* CESHI2.png */,
 				7408AB791EFC9AA600015DF7 /* Main.storyboard */,
 				7408AB7C1EFC9AA600015DF7 /* Assets.xcassets */,
 				7408AB7E1EFC9AA600015DF7 /* LaunchScreen.storyboard */,
@@ -270,10 +269,8 @@
 			files = (
 				7408AB801EFC9AA600015DF7 /* LaunchScreen.storyboard in Resources */,
 				7408AB7D1EFC9AA600015DF7 /* Assets.xcassets in Resources */,
-				7408ABAD1EFC9B9300015DF7 /* CESHI.png in Resources */,
 				7408ABAC1EFC9B9300015DF7 /* center.png in Resources */,
 				7408AB7B1EFC9AA600015DF7 /* Main.storyboard in Resources */,
-				7408ABAE1EFC9B9300015DF7 /* CESHI2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748BA8A11F16198B0043E2CB /* CodeDiscernViewController.m in Sources */,
 				7408ABA71EFC9AC600015DF7 /* BarCodeAndQRCodeManager.m in Sources */,
 				7408ABA81EFC9AC600015DF7 /* QRScanView.m in Sources */,
 				7408AB781EFC9AA600015DF7 /* ViewController.m in Sources */,
@@ -540,6 +538,7 @@
 				7408AB9C1EFC9AA700015DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7408AB9D1EFC9AA700015DF7 /* Build configuration list for PBXNativeTarget "BarCodeAndQRCodeTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +547,7 @@
 				7408AB9F1EFC9AA700015DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7408ABA01EFC9AA700015DF7 /* Build configuration list for PBXNativeTarget "BarCodeAndQRCodeUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +556,7 @@
 				7408ABA21EFC9AA700015DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
