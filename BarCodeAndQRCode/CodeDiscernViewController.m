@@ -125,7 +125,7 @@
     AVMetadataMachineReadableCodeObject *metadataObject = metadataObjects.firstObject;
     // 成功后系统不会停止扫描，用isQRCodeCaptured变量来控制。
     if (self.isQRCodeCaptured == NO) {
-//        self.isQRCodeCaptured = YES;
+        self.isQRCodeCaptured = YES;
         NSString *decodeMessage = @"未扫描到二维码、条形码";
         if ([metadataObject.type isEqualToString:AVMetadataObjectTypeQRCode]) {
             // 二维码
